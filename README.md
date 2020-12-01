@@ -11,4 +11,4 @@
 ❌ `#include <bits/stdc++.h>`는 gcc환경에서만 기본 작동하며, VS에서는 별도 작업을 요합니다.<br>
 
 ## 코드에 대한 설명이 필요한가요?
-[블로그](https://blog.naver.com/5755084)에 일부 풀이에 대한 부가 설명을 게시하고 있습니다. 참고해보세요🙂
+[블로그](https://blog.naver.com/PostSearchList.nhn?SearchText=%EB%B0%B1%EC%A4%80&blogId=5755084)에 일부 풀이에 대한 부가 설명을 게시하고 있습니다. 참고해보세요🙂
