@@ -13,9 +13,9 @@ int main()
 	cin >> n >> m;
 
 	d[1][1] = 1;
-	for (int i = 0; i <= n; i++)
+	for (int i = 1; i <= n; i++)
 	{
-		for (int j = 0; j <= m; j++)
+		for (int j = 1; j <= m; j++)
 		{
 			if (i > 1)
 			{
