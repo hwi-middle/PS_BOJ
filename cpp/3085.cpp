@@ -1,25 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int check(vector<string>& v)
+int check(vector<string>& v, int x, int y)
 {
 	int n = v.size();
 	int res = 1;
-	for (int i = 0; i < n; i++)
+
+	int temp = 1;
+	for (int i = 1; i < n; i++)
 	{
-		//각 칸에 대해 오른쪽, 아래쪽만 교환하면 인접한 칸에 대해 모두 교환한 것과 같다.
-		int temp = 1;
-		for (int j = 1; j < n; j++)
+		if (v[x][i] == v[x][i - 1]) temp++;
+		else temp = 1;
+		res = max(res, temp);
+	}
+	if (x + 1 < n)
+	{
+		temp = 1;
+		for (int i = 1; i < n; i++)
 		{
-			if (v[i][j] == v[i][j - 1]) temp++;
+			if (v[x + 1][i] == v[x + 1][i - 1]) temp++;
 			else temp = 1;
 			res = max(res, temp);
 		}
+	}
 
+	temp = 1;
+	for (int i = 1; i < n; i++)
+	{
+		if (v[i][y] == v[i - 1][y]) temp++;
+		else temp = 1;
+		res = max(res, temp);
+	}
+	if (y + 1 < n)
+	{
 		temp = 1;
-		for (int j = 1; j < n; j++)
+		for (int i = 1; i < n; i++)
 		{
-			if (v[j][i] == v[j - 1][i]) temp++;
+			if (v[i][y + 1] == v[i - 1][y + 1]) temp++;
 			else temp = 1;
 			res = max(res, temp);
 		}
@@ -46,14 +63,14 @@ int main()
 			if (i + 1 < n)
 			{
 				swap(v[i][j], v[i + 1][j]);
-				int temp = check(v);
+				int temp = check(v, i, j);
 				res = max(res, temp);
 				swap(v[i][j], v[i + 1][j]);
 			}
 			if (j + 1 < n)
 			{
 				swap(v[i][j], v[i][j + 1]);
-				int temp = check(v);
+				int temp = check(v, i, j);
 				res = max(res, temp);
 				swap(v[i][j], v[i][j + 1]);
 			}
