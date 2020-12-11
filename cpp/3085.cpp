@@ -7,6 +7,7 @@ int check(vector<string>& v)
 	int res = 1;
 	for (int i = 0; i < n; i++)
 	{
+		//각 칸에 대해 오른쪽, 아래쪽만 교환하면 인접한 칸에 대해 모두 교환한 것과 같다.
 		int temp = 1;
 		for (int j = 1; j < n; j++)
 		{
