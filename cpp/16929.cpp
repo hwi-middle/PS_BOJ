@@ -12,7 +12,7 @@ bool sol(int x, int y, int cnt, char color)
 {
 	if (check[x][y])
 	{
-		if (cnt - dis[x][y] >= 4)
+		if (cnt - dis[x][y] >= 4)	//재방문인데 출발점으로부터 거리가 4이상이면 사이클 찾은 것
 		{
 			return true;
 		}
